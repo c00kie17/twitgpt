@@ -4,6 +4,7 @@ import html
 import re
 import pandas as pd
 import time
+from time import sleep
 replies = []
 
 def handle_reply(status):
@@ -19,6 +20,7 @@ def handle_reply(status):
 def remove_unwated(text):
 	bad_chars = [';', ':', '!', "*","."]
 	text = html.unescape(text.strip())
+	text.encode('ascii', 'ignore').decode('ascii')
 	text = filter(lambda i: i not in bad_chars, text)
 	return "".join(text)
 
@@ -37,9 +39,10 @@ def generate_csv(tweets):
 
 if __name__ == '__main__':
 	allTweets= []
-	nextId = 0
+	fininshed = False
 	regexp = re.compile(r'http\S+')
 	for handle in globalManager.handles:
+		nextId = 0
 		while True:
 			if nextId == 0:
 				statuses = globalManager.api.GetUserTimeline(screen_name=handle,exclude_replies=False,count=200,trim_user=True)
@@ -48,7 +51,12 @@ if __name__ == '__main__':
 			try:
 				nextId = statuses[-1].id - 1
 			except IndexError:
-				break
+				if fininshed:
+					sys.stdout.write('\n')
+					break
+				else:
+					sleep(10)
+					fininshed = True
 			for status in statuses:
 				if not status.full_text.startswith('RT') and len(status.full_text) != '' and not regexp.search(status.full_text):
 					status.full_text = remove_unwated(status.full_text)
