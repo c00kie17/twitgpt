@@ -9,7 +9,6 @@ root_dir = os.path.dirname(__file__)
 class global_Obj:
 
 	def __init__(self):
-		self.settings = self.load_yaml_file(os.path.join(root_dir, '../settings.yaml'))
 		self.get_args()
 		self.download_model()
 
