@@ -3,7 +3,7 @@
 
 ## Installation
 * Clone the repo.
-* run the following command to download all dependencies `pip3 install pyyaml python-twitter pandas `
+* run the following command to download all dependencies `pip3 install pyyaml python-twitter pandas gpt-2-simple`
 * You need to create a file called `/twitter/settings.yaml` with the following information
 
 		twitter_consumer_key: your twitter comsumer key
