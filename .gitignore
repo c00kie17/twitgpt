@@ -1,0 +1,7 @@
+/csv
+/gpt/__pycache__
+/gpt/checkpoint
+/gpt/models
+/twitter/__pycache__
+/twitter/*.yaml
+/__pycache__
