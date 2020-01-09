@@ -1,4 +1,4 @@
-#TwitGPT
+# TwitGPT
 > a GPT2 traininer using twitter posts
 
 ## Installation
