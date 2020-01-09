@@ -20,6 +20,8 @@ class global_Obj:
 		self.args = parser.parse_args()
 		try:
 			self.handles = self.settings['handles']
+			if(self.handles == None):
+				raise KeyError
 		except KeyError:
 			print('\033[91m Please enter twitter handles to generate text from \033[0m')
 			sys.exit()

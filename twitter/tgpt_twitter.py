@@ -39,10 +39,10 @@ def generate_csv(tweets):
 
 if __name__ == '__main__':
 	allTweets= []
-	fininshed = False
 	regexp = re.compile(r'http\S+')
 	for handle in globalManager.handles:
 		nextId = 0
+		fininshed = False
 		while True:
 			if nextId == 0:
 				statuses = globalManager.api.GetUserTimeline(screen_name=handle,exclude_replies=False,count=200,trim_user=True)
