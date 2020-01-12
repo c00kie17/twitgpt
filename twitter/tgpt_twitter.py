@@ -18,11 +18,18 @@ def handle_reply(status):
 	return
 
 def remove_unwated(text):
-	bad_chars = [';', ':', '!', "*","."]
-	text = html.unescape(text.strip())
-	text.encode('ascii', 'ignore').decode('ascii')
-	text = filter(lambda i: i not in bad_chars, text)
-	return "".join(text)
+	if not text.startswith('RT') and len(text) != '':
+		bad_chars = [';', ':', '!', "*","."]
+		text = re.sub(r'http\S+','',text)
+		text = html.unescape(text.strip())
+		text = re.sub(r'@.*$','',text)
+		if text.endswith('by'):
+			text = text[:-2]
+		text.encode('ascii', 'ignore').decode('ascii')
+		text = filter(lambda i: i not in bad_chars, text)
+		return "".join(text)
+	else:
+		return None
 
 def check_if_reply(tweetId):
 	for reply in replies:
@@ -39,7 +46,6 @@ def generate_csv(tweets):
 
 if __name__ == '__main__':
 	allTweets= []
-	regexp = re.compile(r'http\S+')
 	for handle in globalManager.handles:
 		nextId = 0
 		fininshed = False
@@ -58,8 +64,8 @@ if __name__ == '__main__':
 					sleep(10)
 					fininshed = True
 			for status in statuses:
-				if not status.full_text.startswith('RT') and len(status.full_text) != '' and not regexp.search(status.full_text):
-					status.full_text = remove_unwated(status.full_text)
+				status.full_text = remove_unwated(status.full_text)
+				if not status.full_text == None:
 					if(status.in_reply_to_status_id):
 						handle_reply(status)
 					else:
