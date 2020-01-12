@@ -36,7 +36,7 @@ if __name__ == '__main__':
               include_prefix=args.include_prefix,
               return_as_list=args.return_as_list,
               checkpoint_dir=args.checkpoint_dir,
-              models_dir=args.models_dir,
+              model_dir=args.models_dir,
               destination_path=args.destination_path,
               seed=args.seed,
               top_k=args.top_k,
