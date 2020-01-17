@@ -78,20 +78,17 @@ Download the dataset [here](https://drive.google.com/file/d/1yZfDvdb26kJl18i6pPh
 The pretrained models 124M was finetuned on the dataset using a NVIDIA Tesla v100 GPU:
 
 ### 124M
-The trained model zip can be found [here](https://drive.google.com/file/d/1KuGlj-BIIcfc6etYYWRiwtYRk8ZbFn2I/view?usp=sharing)
-The command used to generate the text is `python3 generator.py --run_name=tech124M --model_name=124M --return_as_list=True --truncate="<|endoftext|>" --prefix="<|startoftext|>" --nsamples=10 --batch_size=10 --include_prefix=False --temperature=1.4 `
-Trained for 30000 steps and a average loss of 0.25
+The trained model zip can be found [here](https://drive.google.com/file/d/1oinG-SWxFAWX1DRbZArrASNnx2xTyeJL/view?usp=sharing)
+The command used to generate the text is `python3 generator.py --run_name=tech124M --model_name=124M --return_as_list=True --truncate="<|endoftext|>" --prefix="<|startoftext|>" --nsamples=10 --batch_size=10 --include_prefix=False --temperature=1.6 `
+Trained for 60000 steps and a average loss of 0.08
 
 				Mathematicians have been searching, but the answer lies in physics
-				Has Dyson released a true wireless earbudsaker?
-				Facebook co-founder Eduardo Saverin backtracks on controversial college admissions decisions
-				 If money allowed enters the smart home wars, who wouldn't have thought paying taxes at a tech company is a subset of normal life?
-				 attractive new Camry airbag touting current lineup
-				Art Banks Are Using AI-Powered Cameras To Detect Stealing
-				‘Kids can fall down and he’s the only one who can’t they stop’ …?
-				Twitter chemical plants leak sign Zuckerberg doesn’t understand what the hell is going on
-				Oxford Algorithms fail to produce longest-ever delayed signal, say experts
-				Congress invoked the Foreign Relations Secrecy Act to shield the US government from foreign meddling in the politics of reasons of individuals
+				Former LEGO designerRyan C Smith is creating some select pieces for mix-and-match amputees
+				Weed edibles aren’t as green
+				Swami Releases Sunny Mar setThanks to Hong Kong movements
+				successfully started device jailbreaking, raises US public profile
+				Oakland must Faces $25 Million Class-Action Lawsuit Over Police Trespassing Face-Collection
+				project involve suing writers before they turn over #oncology
 
 
 
